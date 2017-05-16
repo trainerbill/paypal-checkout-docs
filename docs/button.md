@@ -1,25 +1,54 @@
-## PayPal Checkout Button
+# PayPal Checkout Button
 
-![PayPal Button](./img/button.png)
+The PayPal button is an <a href="https://github.com/krakenjs/xcomponent">xcomponent</a> used to render a PayPal button in an iframe on your site.
 
-![PayPal Checkout](./img/checkout.png)
+![PayPal Button](./img/button.png) ![PayPal Checkout](./img/checkout.png)
 
-### Before you start
+# Integration
 
-#### Create a PayPal App
+## Add the script tag to your page
 
-1. Go to https://developer.paypal.com/developer/applications/create
-2. Log in to the site with your PayPal credentials
-3. Follow the instructions to create a new app
-4. Make a note of your **Client ID** and **Secret** for both **Sandbox** and **Live** (Production).
+```html
+<script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
+```
+
+## Render the button
+
+### window.paypal.Button.render(buttonConfig, DOMELEMENT);
+
+#### buttonConfig: object
+
+##### env: string | enum 
+values = ['production', 'sandbox']</i>
+<i>default = 'production'</i>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Add the PayPal Checkout Integration Script
 
 Add the following to your html page:
 
-```html
-<script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
-```
+
 ### Basic Integration
 
 This integration lets you specify all of your payment parameters all at once, to render a button onto the page.
