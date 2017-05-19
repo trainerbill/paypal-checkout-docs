@@ -6,10 +6,29 @@
     <meta name="description" content="{{ page.description | default: site.description | default: site.github.project_tagline }}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-  </head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
   <body>
+    <nav>
+      <div class="nav-wrapper light-blue darken-2">
+        <a href="#" class="brand-logo">PayPal Checkout.js</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="docs">Docs</a></li>
+          <li><a href="demos">Demos</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    
     
     <section class="page-header">
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
@@ -44,5 +63,10 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+
+    <script type="text/javascript">
+      $('.button-collapse').sideNav({'edge': 'left'});
+    </script>
+    
   </body>
 </html>
