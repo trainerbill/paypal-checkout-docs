@@ -5,8 +5,12 @@ layout: sidenav
 <div id="description" class="section scrollspy">
     <h4>Http (Ajax) Helper Functions</h4>
     <p>
-        The paypal checkout library comes bundled with a small HTTP library in order to make it easy to submit basic ajax calls. For the most up to date information look at the <a href="https://github.com/paypal/paypal-checkout/blob/master/src/lib/http.js">source code</a>
+        The paypal checkout library comes bundled with a small HTTP library in order to make it easy to submit basic ajax calls. For the most up to date information look at the 
     </p>
+    <ul class="collection">
+        <li class="collection-item">window.paypal.request</li>
+        <li class="collection-item"><a href="https://github.com/paypal/paypal-checkout/blob/master/src/lib/http.js">Source Code</a></li>
+    </ul>
 </div>
 
 <div class="divider"></div>
@@ -43,8 +47,8 @@ layout: sidenav
 
 <div class="divider"></div>
 
-<div id="http.get">
-    <h5 id="http.get">get(url, options)</h5>
+<div id="get">
+    <h5>get(url, options)</h5>
     <p>The get function performs an AJAX request with the GET method</p>
     <h6>Arguments</h6>
     <table>
@@ -62,7 +66,7 @@ layout: sidenav
             <td>url</td>
             <td>string</td>
             <td>The URL of the GET endpoint you want to make an AJAX call to</td> 
-            <td>Yes</td>
+            <td>true</td>
             <td>None</td>
         </tr>
         <tr>
@@ -90,8 +94,8 @@ paypal
 
 <div class="divider"></div>
 
-<div id="http.post">
-    <h5 id="http.post">post(url, data, options)</h5>
+<div id="post">
+    <h5>post(url, data, options)</h5>
     <p>The post function performs an AJAX request with the POST method</p>
     <h6>Arguments</h6>
     <table>
@@ -109,14 +113,14 @@ paypal
             <td>url</td>
             <td>string</td>
             <td>The URL of the POST endpoint you want to make an AJAX call to</td> 
-            <td>Yes</td>
+            <td>true</td>
             <td>None</td>
         </tr>
         <tr>
             <td>data</td>
             <td>object</td>
             <td>A javascript object containing the data you want to POST to the url endpoint</td> 
-            <td>Yes</td>
+            <td>true</td>
             <td>None</td>
         </tr>
         <tr>
