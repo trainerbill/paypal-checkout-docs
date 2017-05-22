@@ -7,3 +7,11 @@
       link: /demos/rest/minimal
       title: Minimal Demo
       description: This demo gives you a bare minimum integration with PayPal REST API's.  It creates a payment and immediately executes the payment after the PayPal flow is completed.
+- id: misc
+  title: Miscellaneous Demos
+  description: Demos that do not have another home
+  children:
+    - id: styling
+      link: /demos/misc/styling
+      title: Styling Demo
+      description: This demo gives you a bare bones integration with the full styling capabilities.

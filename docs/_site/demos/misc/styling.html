@@ -92,9 +92,9 @@
 <div class="row">
     <div class="col s12 m12">
         <div><div id="description" class="section scrollspy">
-    <h4>Minimal Demo</h4>
+    <h4>Styling Demo</h4>
     <p>
-        This demo gives you a bare minimum integration with PayPal REST API's.  It creates a payment and immediately executes the payment after the PayPal flow is completed.
+        This demo gives you a bare bones integration with the full styling capabilities.  For all available options take a look at our <a href="/paypal-checkout/docs/button#styling">documentation</a>.
     </p>
 </div>
 
@@ -120,7 +120,13 @@ paypal.Button.render({
             window.alert('Payment Complete!');
         });
     },
-    commit: true
+    style: {
+        color: 'blue',
+        shape: 'rect',
+        size:  'medium',
+        label: 'pay',
+        fundingicons: false
+    }
 }, '#paypal-button-container1');
     `; 
 </script>

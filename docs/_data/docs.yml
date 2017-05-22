@@ -5,6 +5,12 @@
     - id: render
       link: /docs/button
       title: render
+    - id: options
+      link: /docs/button
+      title: Options
+    - id: styling
+      link: /docs/button
+      title: Styling
 - id: http
   title: Http (Ajax) Helper Functions
   children: 
@@ -23,4 +29,13 @@
     - id: all
       link: /docs/promise
       title: post
+- id: compatibility
+  title: Product Compatibility
+  children: 
+    - id: products
+      link: /docs/compatibility
+      title: Products
+    - id: browsers
+      link: /docs/compatibility
+      title: Browsers
     
