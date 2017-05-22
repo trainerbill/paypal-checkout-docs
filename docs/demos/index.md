@@ -18,7 +18,7 @@ hero: true
                 <p>
                     {{ child.description }}
                 </p>
-                <a href="{{ site.base_url }}{{ child.link }}" class="btn waves-effect waves-light">Run Demo
+                <a href="/paypal-checkout{{ child.link }}" class="btn waves-effect waves-light">Run Demo
                     <i class="material-icons right">send</i>
                 </a>
             </div>

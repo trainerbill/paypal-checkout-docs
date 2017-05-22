@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<link rel="stylesheet" href="{{ site.baseurl }}/css/sidenav.css">
+<link rel="stylesheet" href="/paypal-checkout/css/sidenav.css">
 <!-- SideNav -->
-<a href="{{ site.baseurl }}/docs" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
+<a href="/paypal-checkout/docs" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
     <i class="material-icons">menu</i>
 </a>
 <ul id="slide-out" class="side-nav fixed">
@@ -23,7 +23,7 @@ layout: default
                 <div class="collapsible-body">
                 <ul>
                     {% for child in doc.children %}
-                    <li><a href="{{ site.baseurl }}{{ child.link }}#{{ child.id }}">{{ child.title }}</a></li>
+                    <li><a href="/paypal-checkout{{ child.link }}#{{ child.id }}">{{ child.title }}</a></li>
                     {% endfor %}
                 </ul>
                 </div>

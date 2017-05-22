@@ -73,7 +73,7 @@ layout: doc
 <div id="example" class="section scrollspy">
     <h4>Example</h4>
     <p>
-        For a complete example using the API's of your choosing, please refer to our <a href="{{ site.base_url }}/demos">demos</a>
+        For a complete example using the API's of your choosing, please refer to our <a href="/paypal-checkout/demos">demos</a>
     </p>
     <pre class="language-markup">
         <code class="language-markup">
