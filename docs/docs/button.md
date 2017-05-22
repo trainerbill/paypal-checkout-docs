@@ -56,8 +56,6 @@ layout: doc
         </tr>
     </tbody>
     </table>
-    <h6>Example</h6>
-    
 </div>
 
 <div class="divider"></div>
@@ -67,6 +65,44 @@ layout: doc
     <p>
         The following options can be used with the button component.
     </p>
+    
+</div>
+
+<div class="divider"></div>
+
+<div id="example" class="section scrollspy">
+    <h4>Example</h4>
+    <p>
+        For a complete example using the API's of your choosing, please refer to our <a href="{{ site.base_url }}/demos">demos</a>
+    </p>
+    <pre class="language-markup">
+        <code class="language-markup">
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<div id="paypal-button-container1"></div>
+// Render the PayPal button
+paypal.Button.render({
+    env: 'sandbox', // sandbox | production
+    client: {
+        sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R'
+    },
+    payment: function(actions) {
+        return actions.payment.create({
+            transactions: [
+                {
+                    amount: { total: '0.01', currency: 'USD' }
+                }
+            ]
+        });
+    },
+    onAuthorize: function(data, actions) {
+        return actions.payment.execute().then(function() {
+            window.alert('Payment Complete!');
+        });
+    },
+    commit: true
+}, '#paypal-button-container1');      
+        </code>
+    </pre>
     
 </div>
 
