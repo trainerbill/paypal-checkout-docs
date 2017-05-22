@@ -8,9 +8,11 @@ hero: true
     <div id="demos" class="section">
         <h2>{{ demo.title }}</h2>
         <p>{{ demo.description }}</p>
+        {% if demo.documentation %}
         <a href="{{ demo.documentation }}" class="btn waves-effect waves-light">API Documentation
             <i class="material-icons right">pageview</i>
         </a>
+        {% endif %}
         <div class="divider"></div>
             {% for child in demo.children %}
             <div id="{{ child.id }}" class="section">
