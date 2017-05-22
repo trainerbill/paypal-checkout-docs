@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <title>PayPal Checkout.js</title>
+    <meta name="description" content="A JavaScript library for integrating with PayPal checkout"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+  </head>
+  <body>
+    <a id="top"></a>
+    <header>
+      <!-- Top Nav -->
+      <nav>
+        <div class="nav-wrapper cyan darken-3">
+          <a href="/" class="brand-logo">
+            <img src="https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom-white.svg" style="height: 50px; margin: 5px"/>
+          </a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/docs">Docs</a></li>
+            <li><a href="/demos">Demos</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      
+      
+
+      <link rel="stylesheet" href="/css/sidenav.css">
+<!-- SideNav -->
+<a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
+    <i class="material-icons">menu</i>
+</a>
+<ul id="slide-out" class="side-nav fixed">
+    <li>
+        <nav>
+            <div class="nav-wrapper cyan darken-3">
+                Demos
+            </div>
+        </nav>
+    </li>
+    
+    <li>
+        <ul class="collapsible collapsible-accordion">
+            <li class="bold">
+                <a class="collapsible-header  waves-effect waves-teal" href="#">REST API Demos</a>
+                <div class="collapsible-body">
+                <ul>
+                    
+                    <li><a href="/demos/rest/minimal">Minimal Demo</a></li>
+                    
+                </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+    
+</ul>
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<link rel="stylesheet" href="/css/editor.css">
+<script src="/js/xcomponent.min.js" type="text/javascript" charset="utf-8"></script> <!-- Remove if we expose xcomponent.create in the checkout.js lib -->
+<script src="/js/editor-component.js" type="text/javascript" charset="utf-8"></script>
+
+<div class="row">
+    <div class="col s12 m12">
+        <div><div id="description" class="section scrollspy">
+    <h4>Minimal Demo</h4>
+    <p>
+        This demo gives you a bare minimum integration with PayPal REST API's.  It creates a payment and immediately executes the payment after the PayPal flow is completed.
+    </p>
+</div>
+
+<script>
+    var code = `
+// Render the PayPal button
+paypal.Button.render({
+    env: 'sandbox', // sandbox | production
+    client: {
+        sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R'
+    },
+    payment: function(actions) {
+        return actions.payment.create({
+            transactions: [
+                {
+                    amount: { total: '0.01', currency: 'USD' }
+                }
+            ]
+        });
+    },
+    onAuthorize: function(data, actions) {
+        return actions.payment.execute().then(function() {
+            window.alert('Payment Complete!');
+        });
+    },
+    commit: true
+}, '#paypal-button-container1');
+    `; 
+</script>
+
+</div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Ace Editor -->
+<div id="demo" class="section scrollspy">
+    <div class="row">
+        <div class="col s4 m4">
+            <h4>Steps</h4>
+            
+            <ul class="collection">
+                <li class="collection-item">Edit Code on the Right</li>
+                <li class="collection-item">
+                    Click Run
+                    <button id="runButton" class="btn waves-effect waves-light disabled">Run
+                        <i class="material-icons right">send</i>
+                    </button>
+                </li>
+                <li class="collection-item">
+                    Click PayPal Button
+                    <div id="editorView"></div>
+                </li>
+                 <li id="editorError" class="collection-item red lighten-3"></li>
+            </ul>
+         
+            
+        </div>
+        <div class="col s8 m8">
+            <pre id="editor"></pre>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<!-- End Ace Editor -->
+
+<script type="text/javascript">
+
+    function pulseButton(button) {
+        button.classList.add('pulse');
+        button.classList.remove('disabled');
+    }
+
+    function unPulseButton(event) {
+        event.srcElement.classList.remove('pulse');
+        event.srcElement.classList.add('disabled');
+    }
+
+    function showError(error) {
+        document.getElementById('editorError').textContent = error.message;
+        document.getElementById('editorError').style.display = 'block';
+    }
+
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setShowPrintMargin(false);
+    editor.setValue(code);
+
+    var child;
+
+    EditorComponent.render({
+        initialize: function (res) {
+            console.log(res);
+            child = res;
+            child.run(editor.getValue());
+        }
+    }, '#editorView');
+
+    
+    
+    editor.on('change', function (event) {
+        pulseButton(document.getElementById('runButton'));
+        document.getElementById('editorError').style.display = 'none';
+    });
+
+    document
+        .getElementById('runButton')
+        .addEventListener('click', function (event) {
+                child
+                    .run(editor.getValue())
+                    .then(function () {
+                        unPulseButton(event);
+                    })
+                    .catch(showError);
+        });
+        
+
+</script>
+
+
+
+
+      
+      
+    </main>
+
+    <footer class="site-footer">
+      
+        <span class="site-footer-owner"><a href="http://github.com/trainerbill/paypal-checkout">paypal-checkout</a> is maintained by <a href="http://github.com/trainerbill">trainerbill</a>.</span>
+      
+      <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+    </footer>
+
+    
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.scrollspy').scrollSpy();
+    });
+    </script>
+
+    <a id="bottom"></a>
+  </body>
+</html>

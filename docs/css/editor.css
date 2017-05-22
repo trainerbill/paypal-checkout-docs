@@ -1,0 +1,13 @@
+#editor {
+    height: 500px;
+    width: 100%;
+}
+
+#editorView {
+    height: 60px;
+}
+
+#editorError {
+    display: none;
+}
+

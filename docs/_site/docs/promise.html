@@ -8,12 +8,9 @@
     <meta name="theme-color" content="#157878">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/style.css?v=1eed3bf9636f388d76dd10f91db7d563da90b55e">
-    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/style.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-    
-
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,72 +22,89 @@
       <!-- Top Nav -->
       <nav>
         <div class="nav-wrapper cyan darken-3">
-          <a href="#" class="brand-logo"></a>
+          <a href="/" class="brand-logo">
+            <img src="https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom-white.svg" style="height: 50px; margin: 5px"/>
+          </a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/docs">Docs</a></li>
             <li><a href="/demos">Demos</a></li>
           </ul>
         </div>
       </nav>
-      <!-- SideNav -->
-      <a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
-        <i class="material-icons">menu</i>
-      </a>
-      <ul id="slide-out" class="side-nav fixed">
-        <li>
-          <nav>
-            <div class="nav-wrapper cyan darken-3">
-              <a href="/" class="brand-logo">PayPal</a>
-            </div>
-          </nav>
-        </li>
-        <li>
-          <ul class="collapsible collapsible-accordion">
-            <li class="bold">
-              <a class="collapsible-header  waves-effect waves-teal" href="#http">Http (Ajax) Helper Functions</a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="/docs/http#get">get</a></li>
-                  <li><a href="/docs/http#post">post</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <ul class="collapsible collapsible-accordion">
-            <li class="bold">
-              <a class="collapsible-header  waves-effect waves-teal" href="#http">Promise Library</a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="/docs/promise#constructor">constructor</a></li>
-                  <li><a href="/docs/promise#all">all</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
     </header>
 
     <main>
-
-      <!-- Hero -->
-      <section class="page-header">
-        <h1 class="project-name">PayPal Checkout.js</h1>
-        <h2 class="project-tagline">A JavaScript library for integrating with PayPal checkout</h2>
-        
-          <a href="http://github.com/trainerbill/paypal-checkout" class="btn">View on GitHub</a>
-        
-        
-      </section>
-
+      
       
 
-        <div class="row">
+      <link rel="stylesheet" href="/css/sidenav.css">
+<!-- SideNav -->
+<a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
+    <i class="material-icons">menu</i>
+</a>
+<ul id="slide-out" class="side-nav fixed">
+    <li>
+        <nav>
+            <div class="nav-wrapper cyan darken-3">
+                Documentation
+            </div>
+        </nav>
+    </li>
+    
+    <li>
+        <ul class="collapsible collapsible-accordion">
+            <li class="bold">
+                <a class="collapsible-header  waves-effect waves-teal" href="#">PayPal Button</a>
+                <div class="collapsible-body">
+                <ul>
+                    
+                    <li><a href="/docs/button#render">render</a></li>
+                    
+                </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+    
+    <li>
+        <ul class="collapsible collapsible-accordion">
+            <li class="bold">
+                <a class="collapsible-header  waves-effect waves-teal" href="#">Http (Ajax) Helper Functions</a>
+                <div class="collapsible-body">
+                <ul>
+                    
+                    <li><a href="/docs/http#get">get</a></li>
+                    
+                    <li><a href="/docs/http#post">post</a></li>
+                    
+                </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+    
+    <li>
+        <ul class="collapsible collapsible-accordion">
+            <li class="bold">
+                <a class="collapsible-header  waves-effect waves-teal" href="#">Promise Library</a>
+                <div class="collapsible-body">
+                <ul>
+                    
+                    <li><a href="/docs/promise#constructor">constructor</a></li>
+                    
+                    <li><a href="/docs/promise#all">post</a></li>
+                    
+                </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+    
+</ul>
 
-          <div class="col s12 m10 110">
-            <div class="main-content"><div id="description" class="section scrollspy">
+<div class="row">
+    <div class="col s12 m10 110">
+        <div class="main-content"><div id="description" class="section scrollspy">
     <h4>Promise</h4>
     <p>
         Since most browsers do not support native promises and some promise libraries may break functionality in our library, we are provided a way to use promises that are compatible
@@ -186,35 +200,22 @@ paypal
 </div>
 
 </div>
-          </div>
-
-          <div class="col hide-on-small-only m2 l2">
-            <div class="toc-wrapper pinned">
-              <ul class="section table-of-contents">
-                <li><a href="#top">Top</a></li>
-                <li><a href="#description">Description</a></li>
-                <li><a href="#options">Options</a></li>
-                <li><a href="#methods">Methods</a></li>
-                <li><a href="#bottom">Bottom</a></li>
-              </ul>
-            </div>
-          </div>
-
+    </div>
+    <div class="col hide-on-small-only m2 l2">
+        <div class="toc-wrapper pinned">
+            <ul class="section table-of-contents">
+            <li><a href="#top">Top</a></li>
+            <li><a href="#description">Description</a></li>
+            <li><a href="#options">Options</a></li>
+            <li><a href="#methods">Methods</a></li>
+            <li><a href="#bottom">Bottom</a></li>
+            </ul>
         </div>
-
-
-        
-
-
+    </div>
+</div>
 
       
-
-        
-
-        
-
-        
-
+      
     </main>
 
     <footer class="site-footer">
@@ -223,38 +224,6 @@ paypal
       
       <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
     </footer>
-
-    
-      
-        
-  
-
-    
-    
-
-    
-    
-
-    
-
-
-    
-
-    
-    
-    
-    
-    
-
-    
-      
-
-      
-
-      
-
-
-    
 
     
 

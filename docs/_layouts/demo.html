@@ -1,0 +1,103 @@
+---
+layout: demos
+---
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<link rel="stylesheet" href="{{ site.baseurl }}/css/editor.css">
+<script src="/js/xcomponent.min.js" type="text/javascript" charset="utf-8"></script> <!-- Remove if we expose xcomponent.create in the checkout.js lib -->
+<script src="/js/editor-component.js" type="text/javascript" charset="utf-8"></script>
+
+<div class="row">
+    <div class="col s12 m12">
+        <div>{{ content }}</div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Ace Editor -->
+<div id="demo" class="section scrollspy">
+    <div class="row">
+        <div class="col s4 m4">
+            <h4>Steps</h4>
+            
+            <ul class="collection">
+                <li class="collection-item">Edit Code on the Right</li>
+                <li class="collection-item">
+                    Click Run
+                    <button id="runButton" class="btn waves-effect waves-light disabled">Run
+                        <i class="material-icons right">send</i>
+                    </button>
+                </li>
+                <li class="collection-item">
+                    Click PayPal Button
+                    <div id="editorView"></div>
+                </li>
+                 <li id="editorError" class="collection-item red lighten-3"></li>
+            </ul>
+         
+            
+        </div>
+        <div class="col s8 m8">
+            <pre id="editor"></pre>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<!-- End Ace Editor -->
+
+<script type="text/javascript">
+
+    function pulseButton(button) {
+        button.classList.add('pulse');
+        button.classList.remove('disabled');
+    }
+
+    function unPulseButton(event) {
+        event.srcElement.classList.remove('pulse');
+        event.srcElement.classList.add('disabled');
+    }
+
+    function showError(error) {
+        document.getElementById('editorError').textContent = error.message;
+        document.getElementById('editorError').style.display = 'block';
+    }
+
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setShowPrintMargin(false);
+    editor.setValue(code);
+
+    var child;
+
+    EditorComponent.render({
+        initialize: function (res) {
+            console.log(res);
+            child = res;
+            child.run(editor.getValue());
+        }
+    }, '#editorView');
+
+    
+    
+    editor.on('change', function (event) {
+        pulseButton(document.getElementById('runButton'));
+        document.getElementById('editorError').style.display = 'none';
+    });
+
+    document
+        .getElementById('runButton')
+        .addEventListener('click', function (event) {
+                child
+                    .run(editor.getValue())
+                    .then(function () {
+                        unPulseButton(event);
+                    })
+                    .catch(showError);
+        });
+        
+
+</script>

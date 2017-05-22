@@ -1,5 +1,5 @@
 ---
-layout: sidenav
+layout: doc
 ---
 
 <div id="description" class="section scrollspy">

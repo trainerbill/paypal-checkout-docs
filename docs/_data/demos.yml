@@ -1,0 +1,9 @@
+- id: rest
+  title: REST API Demos
+  description: Demos using PayPal REST API's
+  documentation: https://developer.paypal.com/docs/integration/direct/payments/
+  children:
+    - id: minimal
+      link: /demos/rest/minimal
+      title: Minimal Demo
+      description: This demo gives you a bare minimum integration with PayPal REST API's.  It creates a payment and immediately executes the payment after the PayPal flow is completed.
