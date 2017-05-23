@@ -17,12 +17,15 @@
 - id: http
   title: Http (Ajax) Helper Functions
   children: 
-    - id: get
+    - id: methods
       link: /docs/http
-      title: get
-    - id: post
+      title: Methods
+    - id: options
       link: /docs/http
-      title: post
+      title: Options
+    - id: examples
+      link: /docs/http
+      title: Examples
 - id: promise
   title: Promise Library
   children: 

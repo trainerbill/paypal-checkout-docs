@@ -1,5 +1,5 @@
 ---
-layout: demo
+layout: iframe
 ---
 
 <div id="description" class="section scrollspy">

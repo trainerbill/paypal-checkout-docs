@@ -1,3 +1,5 @@
+// Edit your Host File
+    // Linux: echo "151.101.64.133 checkout.developer.paypal.com" >> /etc/hosts
 // Open https://developer.paypal.com/docs/integration/direct/express-checkout/integration-jsv4/
 // Select All: Ctrl+A
 // Copy All: Ctrl+C
@@ -8,27 +10,19 @@
 var content = document.getElementsByTagName('article')[0];
 content.innerHTML = '';
 
-var metaTag = document.createElement('meta');
-metaTag['http-equiv'] = "Content-Security-Policy";
-metaTag['content'] = "default-src https://trainerbill.github.io; child-src 'none'; object-src 'none'";
-document.head.appendChild(metaTag);
-
 var xComponent = document.createElement("script");
-xComponent.type = "text/javascript";
-xComponent.src = "//trainerbill.github.io/paypal-checkout/js/xcomponent.min.js";
-xComponent.onload = function () {
-
-    var mainComponent = document.createElement("script");
-    mainComponent.type = "text/javascript";
-    mainComponent.src = "//trainerbill.github.io/paypal-checkout/js/main-component.js";
-    mainComponent.onload = function () {
-        MainComponent.render({}, content);
-    }
-    document.head.appendChild(mainComponent);
-
+xComponent.src = "//www.paypalobjects.com/api/xcomponent.min.js";
+xComponent.onload = function (test) {
+    require(['xcomponent'], function (lib) {
+        window.xcomponent = lib;
+        var DocComponent = document.createElement("script");
+        DocComponent.src = "//www.paypalobjects.com/api/doc-test-component.js";
+        DocComponent.onload = function (test) {
+            MainComponent.render({}, content);
+            
+        }
+        document.head.appendChild(DocComponent);
+    });
+    
 }
 document.head.appendChild(xComponent);
-
-
-
-

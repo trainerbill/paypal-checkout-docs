@@ -7,91 +7,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="/paypal-checkout/css/iframe.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/paypal-checkout/css/style.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="/paypal-checkout/js/xcomponent.min.js" type="text/javascript" charset="utf-8"></script> <!-- Remove if we expose xcomponent.create in the checkout.js lib -->
+    <script type="text/javascript" src="/paypal-checkout/js/main-component.js"></script>
     
   </head>
   <body>
-    <a id="top"></a>
     <header>
-      <!-- Top Nav -->
-      <nav>
-        <div class="nav-wrapper cyan darken-3">
-          <a href="/paypal-checkout/" class="brand-logo">
-            <img src="https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom-white.svg" style="height: 50px; margin: 5px"/>
-          </a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/paypal-checkout/docs">Docs</a></li>
-            <li><a href="/paypal-checkout/demos">Demos</a></li>
-          </ul>
+
+      <!-- SideNav -->
+      <a id="sidenavToggle" href="#" data-activates="slide-out" class="btn-floating btn-large waves-effect waves-light blue darken-4 right">
+          <i class="material-icons">menu</i>
+      </a>
+      <ul id="slide-out" class="side-nav">
+          <li>
+              <nav>
+                  <div class="nav-wrapper blue darken-4">
+                      Checkout.js Menu
+                  </div>
+              </nav>
+          </li>
+          
+          <li>
+              <ul class="collapsible collapsible-accordion">
+                  <li class="bold">
+                      <a class="collapsible-header  waves-effect waves-teal" href="#">PayPal Button</a>
+                      <div class="collapsible-body">
+                      <ul>
+                          
+                          <li><a href="/paypal-checkout/docs/button#arguments">Arguments</a></li>
+                          
+                          <li><a href="/paypal-checkout/docs/button#example">Example</a></li>
+                          
+                          <li><a href="/paypal-checkout/docs/button#options">Options</a></li>
+                          
+                          <li><a href="/paypal-checkout/docs/button#styling">Styling</a></li>
+                          
+                      </ul>
+                      </div>
+                  </li>
+              </ul>
+          </li>
+          
+          <li>
+              <ul class="collapsible collapsible-accordion">
+                  <li class="bold">
+                      <a class="collapsible-header  waves-effect waves-teal" href="#">Http (Ajax) Helper Functions</a>
+                      <div class="collapsible-body">
+                      <ul>
+                          
+                          <li><a href="/paypal-checkout/docs/http#methods">Methods</a></li>
+                          
+                          <li><a href="/paypal-checkout/docs/http#options">Options</a></li>
+                          
+                          <li><a href="/paypal-checkout/docs/http#examples">Examples</a></li>
+                          
+                      </ul>
+                      </div>
+                  </li>
+              </ul>
+          </li>
+          
+          <li>
+              <ul class="collapsible collapsible-accordion">
+                  <li class="bold">
+                      <a class="collapsible-header  waves-effect waves-teal" href="#">Promise Library</a>
+                      <div class="collapsible-body">
+                      <ul>
+                          
+                          <li><a href="/paypal-checkout/docs/promise#constructor">constructor</a></li>
+                          
+                          <li><a href="/paypal-checkout/docs/promise#all">post</a></li>
+                          
+                      </ul>
+                      </div>
+                  </li>
+              </ul>
+          </li>
+          
+          <li>
+              <ul class="collapsible collapsible-accordion">
+                  <li class="bold">
+                      <a class="collapsible-header  waves-effect waves-teal" href="#">Product Compatibility</a>
+                      <div class="collapsible-body">
+                      <ul>
+                          
+                          <li><a href="/paypal-checkout/docs/compatibility#products">Products</a></li>
+                          
+                          <li><a href="/paypal-checkout/docs/compatibility#browsers">Browsers</a></li>
+                          
+                      </ul>
+                      </div>
+                  </li>
+              </ul>
+          </li>
+          
+      </ul>
+      
+      <div class="tap-target blue darken-1" data-activates="sidenavToggle">
+        <div class="tap-target-content">
+          <h5>Menu</h5>
+          <p>Use this menu button to navigate between Checkout.js documentation</p>
         </div>
-      </nav>
+      </div>
+
     </header>
 
-    <main>
-      
-      
+    <main class="container">
 
-      <link rel="stylesheet" href="/paypal-checkout/css/sidenav.css">
-<!-- SideNav -->
-<a href="/paypal-checkout/demos" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
-    <i class="material-icons">menu</i>
-</a>
-<ul id="slide-out" class="side-nav fixed">
-    <li>
-        <nav>
-            <div class="nav-wrapper cyan darken-3">
-                Demos
-            </div>
-        </nav>
-    </li>
-    
-    <li>
-        <ul class="collapsible collapsible-accordion">
-            <li class="bold">
-                <a class="collapsible-header  waves-effect waves-teal" href="#">REST API Demos</a>
-                <div class="collapsible-body">
-                <ul>
-                    
-                    <li><a href="/paypal-checkout/demos/rest/minimal">Minimal Demo</a></li>
-                    
-                </ul>
-                </div>
-            </li>
-        </ul>
-    </li>
-    
-    <li>
-        <ul class="collapsible collapsible-accordion">
-            <li class="bold">
-                <a class="collapsible-header  waves-effect waves-teal" href="#">Miscellaneous Demos</a>
-                <div class="collapsible-body">
-                <ul>
-                    
-                    <li><a href="/paypal-checkout/demos/misc/styling">Styling Demo</a></li>
-                    
-                </ul>
-                </div>
-            </li>
-        </ul>
-    </li>
-    
-</ul>
-
-<script src="https://www.paypalobjects.com/api/checkout.js"></script>
-<link rel="stylesheet" href="/paypal-checkout/css/editor.css">
-<script src="/paypal-checkout/js/xcomponent.min.js" type="text/javascript" charset="utf-8"></script> <!-- Remove if we expose xcomponent.create in the checkout.js lib -->
-<script src="/paypal-checkout/js/editor-component.js" type="text/javascript" charset="utf-8"></script>
-<script src="/paypal-checkout/js/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-
-<div class="row">
-    <div class="col s12 m12">
-        <div><div id="description" class="section scrollspy">
+      <div id="description" class="section scrollspy">
     <h4>Minimal Demo</h4>
     <p>
         This demo gives you a bare minimum integration with PayPal REST API's.  It creates a payment and immediately executes the payment after the PayPal flow is completed.
@@ -125,121 +155,33 @@ paypal.Button.render({
     `; 
 </script>
 
-</div>
-    </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Ace Editor -->
-<div id="demo" class="section scrollspy">
-    <div class="row">
-        <div class="col s4 m4">
-            <h4>Steps</h4>
-            
-            <ul class="collection">
-                <li class="collection-item">Edit Code on the Right</li>
-                <li class="collection-item">
-                    Click Run
-                    <button id="runButton" class="btn waves-effect waves-light disabled">Run
-                        <i class="material-icons right">send</i>
-                    </button>
-                </li>
-                <li class="collection-item">
-                    Click PayPal Button
-                    <div id="editorView"></div>
-                </li>
-                 <li id="editorError" class="collection-item red lighten-3"></li>
-            </ul>
-         
-            
-        </div>
-        <div class="col s8 m8">
-            <pre id="editor"></pre>
-        </div>
-    </div>
-</div>
 
 
-
-<!-- End Ace Editor -->
-
-<script type="text/javascript">
-
-    function pulseButton(button) {
-        button.classList.add('pulse');
-        button.classList.remove('disabled');
-    }
-
-    function unPulseButton(event) {
-        event.srcElement.classList.remove('pulse');
-        event.srcElement.classList.add('disabled');
-    }
-
-    function showError(error) {
-        document.getElementById('editorError').textContent = error.message;
-        document.getElementById('editorError').style.display = 'block';
-    }
-
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/twilight");
-    editor.session.setMode("ace/mode/javascript");
-    editor.setShowPrintMargin(false);
-    editor.setValue(code);
-
-    var child;
-
-    EditorComponent.render({
-        initialize: function (res) {
-            console.log(res);
-            child = res;
-            child.run(editor.getValue());
-        }
-    }, '#editorView');
-
-    
-    
-    editor.on('change', function (event) {
-        pulseButton(document.getElementById('runButton'));
-        document.getElementById('editorError').style.display = 'none';
-    });
-
-    document
-        .getElementById('runButton')
-        .addEventListener('click', function (event) {
-                child
-                    .run(editor.getValue())
-                    .then(function () {
-                        unPulseButton(event);
-                    })
-                    .catch(showError);
-        });
-        
-
-</script>
-
-
-
-
-      
-      
     </main>
 
-    <footer class="site-footer">
-      
-        <span class="site-footer-owner"><a href="http://github.com/trainerbill/paypal-checkout">paypal-checkout</a> is maintained by <a href="http://github.com/trainerbill">trainerbill</a>.</span>
-      
-      <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
-    </footer>
+    
 
     
 
     <script type="text/javascript">
-    $(document).ready(function(){
-      $('.scrollspy').scrollSpy();
-    });
-    </script>
+      $('#sidenavToggle').sideNav({
+          menuWidth: 300, // Default is 300
+          edge: 'right', // Choose the horizontal origin
+          closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+          draggable: true // Choose whether you can drag to open on touch screens
+        });
 
-    <a id="bottom"></a>
+        if (localStorage.getItem('discovered') - 1440 > Date.now()) {
+          console.log('Removing');
+          localStorage.removeItem('discovered');
+        }
+
+        if(!localStorage.getItem('discovered')) {
+          console.log(localStorage.getItem('discovered'));
+          $('.tap-target').tapTarget('open');
+          localStorage.setItem('discovered', Date.now());
+        }
+        
+    </script>
   </body>
 </html>
