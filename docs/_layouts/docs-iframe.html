@@ -1,0 +1,35 @@
+---
+layout: iframe
+---
+<!-- SideNav -->
+<a id="sidenavToggle" href="#" data-activates="slide-out" class="right button-collapse btn-floating btn-large waves-effect waves-light blue darken-4 pulse">
+    <i class="material-icons">menu</i>
+</a>
+<ul id="slide-out" class="side-nav">
+    <li>
+        <nav>
+            <div class="nav-wrapper blue darken-4">
+                Checkout.js Menu
+            </div>
+        </nav>
+    </li>
+    {% for doc in site.data.docs %}
+    <li>
+        <ul class="collapsible collapsible-accordion">
+            <li class="bold">
+                <a class="collapsible-header  waves-effect waves-teal" href="#">{{ doc.title }}</a>
+                <div class="collapsible-body">
+                <ul>
+                    {% for child in doc.children %}
+                    <li><a href="/paypal-checkout{{ child.link }}#{{ child.id }}">{{ child.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+
+
+{{ content }}

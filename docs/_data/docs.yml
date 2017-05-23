@@ -2,9 +2,12 @@
 - id: button
   title: PayPal Button
   children: 
-    - id: render
+    - id: arguments
       link: /docs/button
-      title: render
+      title: Arguments
+    - id: example
+      link: /docs/button
+      title: Example
     - id: options
       link: /docs/button
       title: Options

@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: iframe
 ---
 <div id="products" class="section scrollspy">
     <h4>PayPal Products</h4>
