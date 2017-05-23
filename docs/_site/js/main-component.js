@@ -1,6 +1,6 @@
 var MainComponent = xcomponent.create({
     tag: 'main-component',
-    url: '/paypal-checkout/docs',
+    url: '//trainerbill.github.io/paypal-checkout/docs',
     autoResize: {
         width: false,
         height: true,
