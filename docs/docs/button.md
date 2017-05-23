@@ -110,14 +110,14 @@ paypal.Button.render({
             <tr>
                 <td>payment</td>
                 <td>function</td>
-                <td>Callback function executed after the user clicks the PayPal button.  This function function <b>MUST</b> return or resolve a <a href="compatibility.html#products">payment token</a> in string form.</td>
+                <td>Callback function executed after the user clicks the PayPal button.  This function function <b>MUST</b> return or resolve a <a href="compatibility.html#products">payment token</a> in string form.  This function receives two arguments data and actions</td>
                 <td style="color:red">true</td>
                 <td>none</td>
             </tr>
             <tr>
                 <td>onAuthorize</td>
                 <td>function</td>
-                <td>Callback function executed once the PayPal flow has completed</td>
+                <td>Callback function executed once the PayPal flow has completed.  This function receives two arguments data and actions</td>
                 <td style="color:red">true</td>
                 <td>none</td>
             </tr>
