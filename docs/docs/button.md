@@ -59,8 +59,8 @@ layout: iframe
             </p>
             <blockquote><pre class="language-markup">
                 <code class="language-markup">
-<script src="https://www.paypalobjects.com/api/checkout.js"></script>
-<div id="paypal-button-container1"></div>
+&lt;script src="https://www.paypalobjects.com/api/checkout.js"&gt;&lt;/script&gt;
+&lt;div id="paypal-button-container1"&gt;&lt;/div&gt;
 // Render the PayPal button
 paypal.Button.render({
     env: 'sandbox', // sandbox | production

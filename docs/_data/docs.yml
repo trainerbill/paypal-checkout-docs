@@ -18,22 +18,22 @@
   title: Http (Ajax) Helper Functions
   children: 
     - id: methods
-      link: /docs/http
+      link: /docs/http/
       title: Methods
     - id: options
-      link: /docs/http
+      link: /docs/http/
       title: Options
     - id: examples
-      link: /docs/http
+      link: /docs/http/
       title: Examples
 - id: promise
   title: Promise Library
   children: 
     - id: constructor
-      link: /docs/promise
+      link: /docs/promise/
       title: constructor
     - id: all
-      link: /docs/promise
+      link: /docs/promise/
       title: post
 - id: compatibility
   title: Product Compatibility
