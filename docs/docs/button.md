@@ -25,7 +25,7 @@ layout: doc
 
 <div class="divider"></div>
 
-<div id="renderget">
+<div id="render">
     <h5>render(options, container)</h5>
     <p>The render method creates an iframe containing the PayPal button and renders it on the page.</p>
     <h6>Arguments</h6>
