@@ -6,19 +6,18 @@ function initXcomponent() {
     DocsComponent = xcomponent.create({
         tag: 'docs-component',
         url: 'https://trainerbill.github.io/paypal-checkout/docs/',
-        /*
+
         dimensions: {
-            width: '800px',
-            height: '800px'
+            width: '100%',
+            height: '100%'
         },
-        */
         autoResize: {
             height: true,
-            width: true,
+            width: false,
             element: 'body'
         },
         domain: 'https://trainerbill.github.io',
-        // scrolling: false,
+        scrolling: false,
         props: {
             
         }
