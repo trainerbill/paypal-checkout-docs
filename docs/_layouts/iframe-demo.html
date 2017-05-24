@@ -32,6 +32,12 @@ layout: iframe
                 </div>
             </div>
         </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">error</i>Errors<span id="errorCount" class="new badge red right" data-badge-caption="errors">0</span></div>
+            <div class="collapsible-body">
+                <div id="errors"></div>
+            </div
+        </li>
     </ul>
     <div class="row">
         <h4>PayPal Button</h4>
@@ -51,9 +57,18 @@ layout: iframe
         event.srcElement.classList.add('disabled');
     }
 
-    function showError(error) {
-        //document.getElementById('editorError').textContent = error.message;
-        //document.getElementById('editorError').style.display = 'block';
+    var errors = 0;
+    function handleError(error) {
+        errors++;
+        document.getElementById('errorCount').textContent = errors;
+        
+        var errDiv = document.createElement('div');
+        errDiv.textContent = error.message;
+        document.getElementById('errors').appendChild(errDiv);
+
+        var divider = document.createElement('div');
+        divider.classList.add('divider');
+        document.getElementById('errors').appendChild(divider);
     }
 
     var editor = ace.edit("editor");
@@ -76,7 +91,6 @@ layout: iframe
     
     editor.on('change', function (event) {
         pulseButton(document.getElementById('runButton'));
-        // document.getElementById('editorError').style.display = 'none';
     });
 
     document
@@ -87,7 +101,7 @@ layout: iframe
                     .then(function () {
                         unPulseButton(event);
                     })
-                    .catch(showError);
+                    .catch(handleError);
         });
 
     document

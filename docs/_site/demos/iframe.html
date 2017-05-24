@@ -19,9 +19,14 @@
         <div id="paypal-button-container2"></div>
         <script type="text/javascript">
             function runCode(code) {
-                document.getElementById('paypal-button-container1').innerHTML = '';
-                document.getElementById('paypal-button-container2').innerHTML = '';
-                eval(code); 
+                try {
+                    document.getElementById('paypal-button-container1').innerHTML = '';
+                    document.getElementById('paypal-button-container2').innerHTML = '';
+                    eval(code); 
+                } catch (e) {
+                    throw e;
+                }
+                
             }
 
             window

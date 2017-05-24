@@ -37,6 +37,9 @@ paypal.Button.render({
         size:  'medium',
         label: 'pay',
         fundingicons: false
+    },
+    onError: function (err) {
+        handleError(err);
     }
 }, '#paypal-button-container1');
     `; 
