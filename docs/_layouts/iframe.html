@@ -20,35 +20,62 @@
   </head>
   <body>
     <header>
-
       <!-- SideNav -->
       <a id="sidenavToggle" href="#" data-activates="slide-out" class="btn-floating btn-large waves-effect waves-light blue darken-4 right">
           <i class="material-icons">menu</i>
       </a>
       <ul id="slide-out" class="side-nav">
           <li>
-              <nav>
-                  <div class="nav-wrapper blue darken-4">
-                      Checkout.js Menu
+              <nav class="nav-extended blue darken-4">
+                <div class="nav-wrapper">
+                  <a href="#" class="brand-logo">Checkout.js Menu</a>
+                </div>
+                <div class="nav-content">
+                  <div class="row">
+                    <ul class="tabs tabs-transparent">
+                      <li class="tab"><a class="active" href="#documentation">Documentation</a></li>
+                      <li class="tab"><a href="#demos" >Demos</a></li>
+                    </ul>
                   </div>
+                </div>
               </nav>
           </li>
-          {% for doc in site.data.docs %}
           <li>
-              <ul class="collapsible collapsible-accordion">
+            <div class="row">
+              <div id="documentation" class="col s12">
+                {% for doc in site.data.docs %}
+                <ul class="collapsible collapsible-accordion">
                   <li class="bold">
-                      <a class="collapsible-header  waves-effect waves-teal" href="#">{{ doc.title }}</a>
-                      <div class="collapsible-body">
+                    <a class="collapsible-header  waves-effect waves-teal" href="#">{{ doc.title }}</a>
+                    <div class="collapsible-body">
                       <ul>
                           {% for child in doc.children %}
                           <li><a href="/paypal-checkout{{ child.link }}#{{ child.id }}">{{ child.title }}</a></li>
                           {% endfor %}
                       </ul>
-                      </div>
+                    </div>
                   </li>
-              </ul>
+                </ul>
+                {% endfor %}
+              </div>
+              <div id="demos" class="col s12">
+                {% for demo in site.data.demos %}
+                <ul class="collapsible collapsible-accordion">
+                    <li class="bold">
+                        <a class="collapsible-header  waves-effect waves-teal" href="#">{{ demo.title }}</a>
+                        <div class="collapsible-body">
+                        <ul>
+                            {% for child in demo.children %}
+                            <li><a href="/paypal-checkout{{ child.link }}">{{ child.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        </div>
+                    </li>
+                </ul>
+                {% endfor %}
+              </div>
+            </div>
           </li>
-          {% endfor %}
       </ul>
       
       <div class="tap-target blue darken-1" data-activates="sidenavToggle">
@@ -57,6 +84,8 @@
           <p>Use this menu button to navigate between Checkout.js documentation</p>
         </div>
       </div>
+
+      
 
     </header>
 
@@ -83,7 +112,6 @@
       $('#sidenavToggle').sideNav({
           menuWidth: 300, // Default is 300
           edge: 'right', // Choose the horizontal origin
-          closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
           draggable: true // Choose whether you can drag to open on touch screens
         });
 

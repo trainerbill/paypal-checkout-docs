@@ -20,25 +20,34 @@
   </head>
   <body>
     <header>
-
       <!-- SideNav -->
       <a id="sidenavToggle" href="#" data-activates="slide-out" class="btn-floating btn-large waves-effect waves-light blue darken-4 right">
           <i class="material-icons">menu</i>
       </a>
       <ul id="slide-out" class="side-nav">
           <li>
-              <nav>
-                  <div class="nav-wrapper blue darken-4">
-                      Checkout.js Menu
+              <nav class="nav-extended blue darken-4">
+                <div class="nav-wrapper">
+                  <a href="#" class="brand-logo">Checkout.js Menu</a>
+                </div>
+                <div class="nav-content">
+                  <div class="row">
+                    <ul class="tabs tabs-transparent">
+                      <li class="tab"><a class="active" href="#documentation">Documentation</a></li>
+                      <li class="tab"><a href="#demos" >Demos</a></li>
+                    </ul>
                   </div>
+                </div>
               </nav>
           </li>
-          
           <li>
-              <ul class="collapsible collapsible-accordion">
+            <div class="row">
+              <div id="documentation" class="col s12">
+                
+                <ul class="collapsible collapsible-accordion">
                   <li class="bold">
-                      <a class="collapsible-header  waves-effect waves-teal" href="#">PayPal Button</a>
-                      <div class="collapsible-body">
+                    <a class="collapsible-header  waves-effect waves-teal" href="#">PayPal Button</a>
+                    <div class="collapsible-body">
                       <ul>
                           
                           <li><a href="/paypal-checkout/docs/button#arguments">Arguments</a></li>
@@ -50,16 +59,14 @@
                           <li><a href="/paypal-checkout/docs/button#styling">Styling</a></li>
                           
                       </ul>
-                      </div>
+                    </div>
                   </li>
-              </ul>
-          </li>
-          
-          <li>
-              <ul class="collapsible collapsible-accordion">
+                </ul>
+                
+                <ul class="collapsible collapsible-accordion">
                   <li class="bold">
-                      <a class="collapsible-header  waves-effect waves-teal" href="#">Http (Ajax) Helper Functions</a>
-                      <div class="collapsible-body">
+                    <a class="collapsible-header  waves-effect waves-teal" href="#">Http (Ajax) Helper Functions</a>
+                    <div class="collapsible-body">
                       <ul>
                           
                           <li><a href="/paypal-checkout/docs/http/#methods">Methods</a></li>
@@ -69,16 +76,14 @@
                           <li><a href="/paypal-checkout/docs/http/#examples">Examples</a></li>
                           
                       </ul>
-                      </div>
+                    </div>
                   </li>
-              </ul>
-          </li>
-          
-          <li>
-              <ul class="collapsible collapsible-accordion">
+                </ul>
+                
+                <ul class="collapsible collapsible-accordion">
                   <li class="bold">
-                      <a class="collapsible-header  waves-effect waves-teal" href="#">Promise Library</a>
-                      <div class="collapsible-body">
+                    <a class="collapsible-header  waves-effect waves-teal" href="#">Promise Library</a>
+                    <div class="collapsible-body">
                       <ul>
                           
                           <li><a href="/paypal-checkout/docs/promise/#constructor">constructor</a></li>
@@ -86,16 +91,14 @@
                           <li><a href="/paypal-checkout/docs/promise/#all">post</a></li>
                           
                       </ul>
-                      </div>
+                    </div>
                   </li>
-              </ul>
-          </li>
-          
-          <li>
-              <ul class="collapsible collapsible-accordion">
+                </ul>
+                
+                <ul class="collapsible collapsible-accordion">
                   <li class="bold">
-                      <a class="collapsible-header  waves-effect waves-teal" href="#">Product Compatibility</a>
-                      <div class="collapsible-body">
+                    <a class="collapsible-header  waves-effect waves-teal" href="#">Product Compatibility</a>
+                    <div class="collapsible-body">
                       <ul>
                           
                           <li><a href="/paypal-checkout/docs/compatibility#products">Products</a></li>
@@ -103,11 +106,42 @@
                           <li><a href="/paypal-checkout/docs/compatibility#browsers">Browsers</a></li>
                           
                       </ul>
-                      </div>
+                    </div>
                   </li>
-              </ul>
+                </ul>
+                
+              </div>
+              <div id="demos" class="col s12">
+                
+                <ul class="collapsible collapsible-accordion">
+                    <li class="bold">
+                        <a class="collapsible-header  waves-effect waves-teal" href="#">REST API Demos</a>
+                        <div class="collapsible-body">
+                        <ul>
+                            
+                            <li><a href="/paypal-checkout/demos/rest/minimal">Minimal Demo</a></li>
+                            
+                        </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul class="collapsible collapsible-accordion">
+                    <li class="bold">
+                        <a class="collapsible-header  waves-effect waves-teal" href="#">Miscellaneous Demos</a>
+                        <div class="collapsible-body">
+                        <ul>
+                            
+                            <li><a href="/paypal-checkout/demos/misc/styling">Styling Demo</a></li>
+                            
+                        </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+              </div>
+            </div>
           </li>
-          
       </ul>
       
       <div class="tap-target blue darken-1" data-activates="sidenavToggle">
@@ -116,6 +150,8 @@
           <p>Use this menu button to navigate between Checkout.js documentation</p>
         </div>
       </div>
+
+      
 
     </header>
 
@@ -204,11 +240,10 @@ paypal
       $('#sidenavToggle').sideNav({
           menuWidth: 300, // Default is 300
           edge: 'right', // Choose the horizontal origin
-          closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
           draggable: true // Choose whether you can drag to open on touch screens
         });
 
-        if (localStorage.getItem('discovered') - 1440 > Date.now()) {
+        if (localStorage.getItem('discovered') - 300 > Date.now()) {
           console.log('Removing');
           localStorage.removeItem('discovered');
         }
