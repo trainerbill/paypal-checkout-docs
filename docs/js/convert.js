@@ -9,8 +9,7 @@
 var content = document.getElementsByTagName('article')[0];
 content.innerHTML = '';
 content.id = 'docTest';
-content.style.height = '1000px';
-content.style['margin-top'] = '80px';
+
 
 var script = document.createElement("script");
 script.src = "//www.paypalobjects.com/api/doc-test-component.js?bust=" + Date.now();
