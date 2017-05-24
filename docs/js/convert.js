@@ -8,13 +8,14 @@
 var content = document.getElementsByTagName('article')[0];
 content.innerHTML = '';
 content.id = 'docTest';
+content.height = '1500px';
 
 var checkoutjs = document.createElement("script");
 checkoutjs.src = "//www.paypalobjects.com/api/checkout.js";
 document.head.appendChild(checkoutjs);
 
 var script = document.createElement("script");
-script.src = "//www.paypalobjects.com/api/doc-test-component.js?bust=" + Date.now();
+script.src = "//trainerbill.github.io/paypal-checkout/js/main-component.js?bust=" + Date.now();
 script.setAttribute('data-render', 'true');
 script.setAttribute('data-render-id', '#docTest');
 document.head.appendChild(script);
