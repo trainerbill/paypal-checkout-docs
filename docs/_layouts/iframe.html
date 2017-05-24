@@ -87,7 +87,7 @@
           draggable: true // Choose whether you can drag to open on touch screens
         });
 
-        if (localStorage.getItem('discovered') - 1440 > Date.now()) {
+        if (localStorage.getItem('discovered') - 300 > Date.now()) {
           console.log('Removing');
           localStorage.removeItem('discovered');
         }
