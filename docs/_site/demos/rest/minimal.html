@@ -241,8 +241,8 @@ paypal.Button.render({
     }
 
     function showError(error) {
-        document.getElementById('editorError').textContent = error.message;
-        document.getElementById('editorError').style.display = 'block';
+        //document.getElementById('editorError').textContent = error.message;
+        //document.getElementById('editorError').style.display = 'block';
     }
 
     var editor = ace.edit("editor");
@@ -265,7 +265,7 @@ paypal.Button.render({
     
     editor.on('change', function (event) {
         pulseButton(document.getElementById('runButton'));
-        document.getElementById('editorError').style.display = 'none';
+        // document.getElementById('editorError').style.display = 'none';
     });
 
     document
