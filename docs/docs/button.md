@@ -12,7 +12,7 @@ layout: iframe
         </p>
         <ul class="collection">
             <li class="collection-item">window.paypal.Button.render(options, container)</li>
-            <li class="collection-item"><a href="https://github.com/paypal/paypal-checkout/tree/master/src/components/button">Source Code</a></li>
+            <li class="collection-item"><a href="https://github.com/paypal/paypal-checkout-docs/tree/master/src/components/button">Source Code</a></li>
         </ul>
     </div>
     <div class="card-tabs">
@@ -55,7 +55,7 @@ layout: iframe
         </div>
         <div id="example">
             <p class="flow-text">
-                For a complete example using the API's of your choosing, please refer to our <a href="/paypal-checkout/demos">demos</a>
+                For a complete example using the API's of your choosing, please refer to our <a href="/paypal-checkout-docs/demos">demos</a>
             </p>
             <blockquote><pre class="language-markup">
                 <code class="language-markup">
@@ -166,7 +166,7 @@ paypal.Button.render({
             </table>
         </div>
         <div id="styling">
-            <p class="flow-text">This section defines the styling options for the PayPal button.  <a href="/paypal-checkout/demos/misc/styling">Try our interactive styling demo</a></p>
+            <p class="flow-text">This section defines the styling options for the PayPal button.  <a href="/paypal-checkout-docs/demos/misc/styling">Try our interactive styling demo</a></p>
             <table>
                 <thead>
                     <tr>

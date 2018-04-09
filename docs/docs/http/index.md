@@ -46,7 +46,7 @@ layout: iframe
         </div>
         <div id="options">
             <p class="flow-text">
-                The options for the Http library are located on the <a href="https://github.com/paypal/paypal-checkout/blob/master/src/lib/http.js#L5">RequestOptionsType</a> type.
+                The options for the Http library are located on the <a href="https://github.com/paypal/paypal-checkout-docs/blob/master/src/lib/http.js#L5">RequestOptionsType</a> type.
             </p>
             <pre class="language-markup">
                 <code class="language-markup">

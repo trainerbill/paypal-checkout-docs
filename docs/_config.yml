@@ -1,7 +1,7 @@
 theme: jekyll-theme-cayman
 title: PayPal Checkout.js
 description: A JavaScript library for integrating with PayPal checkout
-baseurl: /paypal-checkout
+baseurl: /paypal-checkout-docs
 sidenav: false
 scrollspy: false
 hero: false

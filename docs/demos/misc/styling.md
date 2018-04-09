@@ -5,7 +5,7 @@ layout: iframe-demo
 <div id="description" class="section scrollspy">
     <h4>{{ site.data.demos[1].children[0].title }}</h4>
     <p>
-        {{ site.data.demos[1].children[0].description }}  For all available options take a look at our <a href="/paypal-checkout/docs/button#styling">documentation</a>.
+        {{ site.data.demos[1].children[0].description }}  For all available options take a look at our <a href="/paypal-checkout-docs/docs/button#styling">documentation</a>.
     </p>
 </div>
 

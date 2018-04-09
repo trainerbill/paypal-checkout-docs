@@ -40,7 +40,7 @@ layout: iframe
                         <td>string</td>
                         <td>The URL to make the AJAX call</td>
                         <td>false</td>
-                        <td><a href="/paypal-checkout/docs/http#options">Http Options</a></td>
+                        <td><a href="/paypal-checkout-docs/docs/http#options">Http Options</a></td>
                     </tr>
                 </tbody>
             </table>

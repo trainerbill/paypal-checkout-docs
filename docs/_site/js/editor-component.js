@@ -1,6 +1,6 @@
 var EditorComponent = xcomponent.create({
     tag: 'editor-component',
-    url: '/paypal-checkout/demos/iframe.html',
+    url: '/paypal-checkout-docs/demos/iframe.html',
     dimensions: {
         width: '100%',
         height: '60px'

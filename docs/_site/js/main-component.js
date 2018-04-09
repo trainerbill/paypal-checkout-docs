@@ -5,7 +5,7 @@ function initXcomponent() {
 
     DocsComponent = xcomponent.create({
         tag: 'docs-component',
-        url: 'https://trainerbill.github.io/paypal-checkout/docs/',
+        url: 'https://trainerbill.github.io/paypal-checkout-docs/docs/',
 
         dimensions: {
             width: '100%',

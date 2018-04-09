@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <link rel="stylesheet" href="/paypal-checkout/css/iframe.css">
+    <link rel="stylesheet" href="/paypal-checkout-docs/css/iframe.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="/paypal-checkout/js/xcomponent.min.js" type="text/javascript" charset="utf-8"></script> <!-- Remove if we expose xcomponent.create in the checkout.js lib -->
-    <script type="text/javascript" src="/paypal-checkout/js/main-component.js"></script>
+    <script src="/paypal-checkout-docs/js/xcomponent.min.js" type="text/javascript" charset="utf-8"></script> <!-- Remove if we expose xcomponent.create in the checkout.js lib -->
+    <script type="text/javascript" src="/paypal-checkout-docs/js/main-component.js"></script>
     
   </head>
   <body>
@@ -56,7 +56,7 @@
                     <div class="collapsible-body">
                       <ul>
                           {% for child in doc.children %}
-                          <li><a href="/paypal-checkout{{ child.link }}#{{ child.id }}">{{ child.title }}</a></li>
+                          <li><a href="/paypal-checkout-docs{{ child.link }}#{{ child.id }}">{{ child.title }}</a></li>
                           {% endfor %}
                       </ul>
                     </div>
@@ -72,7 +72,7 @@
                         <div class="collapsible-body">
                         <ul>
                             {% for child in demo.children %}
-                            <li><a href="/paypal-checkout{{ child.link }}">{{ child.title }}</a></li>
+                            <li><a href="/paypal-checkout-docs{{ child.link }}">{{ child.title }}</a></li>
                             {% endfor %}
                         </ul>
                         </div>
