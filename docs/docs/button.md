@@ -5,7 +5,7 @@ layout: iframe
 
 <div class="card">
     <div class="card-content">
-        <h4>PayPal Button</h4>
+        <h4>PayPal Button, Hi Stan</h4>
         <p>
             In order to place a PayPal checkout button in your application you must use the Button component.  The Button component is an <a href="https://github.com/krakenjs/xcomponent">xcomponent</a> used to communciate between
             a merchants site and paypal.com.
