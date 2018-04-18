@@ -4,7 +4,7 @@ layout: iframe
 
 <div class="card">
     <div class="card-content">
-        <h4>Constructor</h4>
+        <h4>Constructor Steve</h4>
         <ul class="collection">
             <li class="collection-item">new window.paypal.Promise(function (resolve, reject) {})</li>
         </ul>
